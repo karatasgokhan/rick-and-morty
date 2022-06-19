@@ -1,9 +1,14 @@
 import React from "react";
-import { Counter } from "./features/counter/Counter";
 import "./App.css";
+import { useGetRickAndMortyLocationQuery } from "./store/apis/RickAndMortyApi";
 
 function App() {
-  return <Counter />;
+  const { data, isLoading, isSuccess } = useGetRickAndMortyLocationQuery("");
+
+  console.log("data", data);
+  console.log("isSuccess", isSuccess);
+  console.log("isLoading", isLoading);
+  return <>Rick and Morty</>;
 }
 
 export default App;
