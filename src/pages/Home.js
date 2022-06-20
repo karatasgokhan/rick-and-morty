@@ -1,19 +1,16 @@
 import React from "react";
-import LocationTable from "../components/tables/LocationTable";
+import { Container, Row, Col } from "react-grid-system";
 
 function Home() {
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <h1>Location Table</h1>
+      <div className="mainContent">
+        <Container>
+          <Row>
+            <Col sm={12}>Welcome to Rick And Morty App</Col>
+          </Row>
+        </Container>
       </div>
-      <LocationTable />
     </>
   );
 }

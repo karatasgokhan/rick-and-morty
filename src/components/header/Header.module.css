@@ -5,6 +5,9 @@
   padding: 0 30px;
   background-color: white;
   border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .titleText {
   margin: 0 0 0 15px;
@@ -19,4 +22,20 @@
   width: 60px;
   height: 60px;
   object-fit: cover;
+}
+.sideNav {
+  width: 240px;
+  position: absolute;
+  height: calc(100% - 80px);
+  top: 80px;
+  left: 0;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgb(72 72 72 / 0.1);
+}
+.menu {
+  list-style: none;
+}
+.menuItem {
+  margin: 0 0 10px 0;
 }
