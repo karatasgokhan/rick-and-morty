@@ -1,6 +1,7 @@
 import React from "react";
 import DataTable from "react-data-table-component";
 import { useGetRickAndMortyLocationQuery } from "../../store/apis/RickAndMortyApi";
+import * as ROUTES from "../../constans/routePath";
 
 export default function LocationTable() {
   const { data, isLoading, isSuccess } = useGetRickAndMortyLocationQuery(2);
@@ -8,7 +9,7 @@ export default function LocationTable() {
   const columns = [
     {
       name: "Name",
-      selector: (row) => <a href="/">{row.name}</a>,
+      selector: (row) => <a href={ROUTES.HOME}>{row.name}</a>,
       sortable: true,
     },
     { name: "Dimension", selector: (row) => row.dimension, sortable: true },

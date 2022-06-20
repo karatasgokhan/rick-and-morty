@@ -1,17 +1,18 @@
 import React from "react";
 import s from "./Header.module.css";
 import logo from "../../assets/rickAndMortyLogo.png";
+import * as ROUTES from "../../constans/routePath";
 
 function Header() {
   const menuContent = [
-    { name: "Dasboard", url: "/" },
-    { name: "Loacations", url: "locations" },
+    { name: "Dasboard", url: ROUTES.HOME },
+    { name: "Loacations", url: ROUTES.LOCATIONS },
   ];
   return (
     <>
       <div className={s.headerWrapper}>
         <div className={s.titleBlock}>
-          <a href="/">
+          <a href={ROUTES.HOME}>
             <img className={s.imgItem} src={logo} alt="Rick And Morty logo" />
           </a>
           <p className={s.titleText}>Rick And Morty [App]</p>
