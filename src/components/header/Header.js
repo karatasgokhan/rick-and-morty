@@ -6,7 +6,7 @@ import * as ROUTES from "../../constans/routePath";
 function Header() {
   const menuContent = [
     { name: "Dasboard", url: ROUTES.HOME },
-    { name: "Loacations", url: ROUTES.LOCATIONS },
+    { name: "Locations", url: ROUTES.LOCATIONS },
   ];
   return (
     <>

@@ -1,15 +1,28 @@
-import React from "react";
+import { React, useState } from "react";
 import DataTable from "react-data-table-component";
-import { useGetRickAndMortyLocationQuery } from "../../store/apis/RickAndMortyApi";
+import {
+  useGetRickAndMortyLocationsQuery,
+  useGetRickAndMortyLocationQuery,
+} from "../../store/apis/RickAndMortyApi";
 import * as ROUTES from "../../constans/routePath";
 
 export default function LocationTable() {
-  const { data, isLoading, isSuccess } = useGetRickAndMortyLocationQuery(2);
+  const [locationId, setLocationId] = useState("");
+  const { data, isLoading, isSuccess } = useGetRickAndMortyLocationsQuery(2);
+  const {
+    data: locationData,
+    isLoading: locationLoading,
+    isSuccess: locationIsSuccess,
+  } = useGetRickAndMortyLocationQuery(locationId);
+
+  const onClick = (id) => {
+    setLocationId(id);
+  };
 
   const columns = [
     {
       name: "Name",
-      selector: (row) => <a href={ROUTES.HOME}>{row.name}</a>,
+      cell: (row) => <p onClick={() => onClick(row.id)}> {row.name}</p>,
       sortable: true,
     },
     { name: "Dimension", selector: (row) => row.dimension, sortable: true },

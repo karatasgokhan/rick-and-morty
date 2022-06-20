@@ -3,6 +3,7 @@ import Home from "../src/pages/Home";
 import Locations from "../src/pages/Locations";
 import PageNotFound from "../src/pages/PageNotFound";
 import Header from "../src/components/header/Header";
+import Residents from "./pages/Residents";
 import * as ROUTES from "../src/constans/routePath";
 
 import "./App.css";
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.LOCATIONS} element={<Locations />} />
+        <Route path={ROUTES.RESIDENTS} element={<Residents />} />
         <Route path={ROUTES.PAGENOTFOUND} element={<PageNotFound />}></Route>
       </Routes>
     </BrowserRouter>
