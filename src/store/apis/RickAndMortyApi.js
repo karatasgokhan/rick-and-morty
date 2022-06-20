@@ -9,12 +9,21 @@ export const rickAndMortyApi = createApi({
   baseQuery: baseQuery,
   endpoints: (builder) => ({
     getRickAndMortyLocation: builder.query({
-      query: () => ({
-        url: "/location",
+      query: (pageNumber) => ({
+        url: `location?page=${pageNumber}`,
+        method: "GET",
+      }),
+    }),
+    getRickAndMortyLocationResidants: builder.query({
+      query: (number) => ({
+        url: `location/${number}`,
         method: "GET",
       }),
     }),
   }),
 });
 
-export const { useGetRickAndMortyLocationQuery } = rickAndMortyApi;
+export const {
+  useGetRickAndMortyLocationQuery,
+  useGetRickAndMortyLocationResidantsQuery,
+} = rickAndMortyApi;

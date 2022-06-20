@@ -1,14 +1,19 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../src/pages/Home";
+import PageNotFound from "../src/pages/PageNotFound";
+import Header from "../src/components/header/Header";
 import "./App.css";
-import { useGetRickAndMortyLocationQuery } from "./store/apis/RickAndMortyApi";
 
 function App() {
-  const { data, isLoading, isSuccess } = useGetRickAndMortyLocationQuery("");
-
-  console.log("data", data);
-  console.log("isSuccess", isSuccess);
-  console.log("isLoading", isLoading);
-  return <>Rick and Morty</>;
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<PageNotFound />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
