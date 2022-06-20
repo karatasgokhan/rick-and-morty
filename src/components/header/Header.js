@@ -11,12 +11,14 @@ function Header() {
     <>
       <div className={s.headerWrapper}>
         <div className={s.titleBlock}>
-          <img className={s.imgItem} src={logo} alt="Rick And Morty logo" />
+          <a href="/">
+            <img className={s.imgItem} src={logo} alt="Rick And Morty logo" />
+          </a>
           <p className={s.titleText}>Rick And Morty [App]</p>
         </div>
       </div>
       <div className={s.sideNav}>
-        <ul className={s.menu}>
+        <ul>
           {menuContent.map((item, index) => {
             return (
               <li key={index} className={s.menuItem}>

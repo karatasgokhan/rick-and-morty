@@ -6,11 +6,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f4f4;
+  overflow-x: hidden;
 }
 
 .mainContent {
   padding: 0 0 0 240px;
-  margin-top: 80px;
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+a:hover {
+  color: #696666;
 }
 
 code {

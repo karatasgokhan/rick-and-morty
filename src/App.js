@@ -3,6 +3,8 @@ import Home from "../src/pages/Home";
 import Locations from "../src/pages/Locations";
 import PageNotFound from "../src/pages/PageNotFound";
 import Header from "../src/components/header/Header";
+import * as ROUTES from "../src/constans/routePath";
+
 import "./App.css";
 
 function App() {
@@ -10,9 +12,9 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/locations" element={<Locations />} />
-        <Route path="*" element={<PageNotFound />}></Route>
+        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.LOCATIONS} element={<Locations />} />
+        <Route path={ROUTES.PAGENOTFOUND} element={<PageNotFound />}></Route>
       </Routes>
     </BrowserRouter>
   );

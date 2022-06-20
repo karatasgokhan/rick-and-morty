@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-grid-system";
 import LocationTable from "../components/tables/LocationTable";
+import s from "./Locations.module.css";
 
 function Locations() {
   return (
@@ -9,13 +10,7 @@ function Locations() {
         <Container>
           <Row>
             <Col sm={12}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className={s.locationsWrapper}>
                 <h1>Location Table</h1>
               </div>
               <LocationTable />
