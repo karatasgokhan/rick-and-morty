@@ -16,7 +16,15 @@ function Character(props) {
                 <div className={s.textItem}>
                   <h2>{item.name}</h2>
                   <div className={s.statusItem}>
-                    <span className={`${s.circle} ${s.unknown}`}></span>
+                    <span
+                      className={`${s.circle} ${
+                        item.status === "Dead"
+                          ? s.dead
+                          : item.status === "Alive"
+                          ? s.alive
+                          : s.unknown
+                      }`}
+                    ></span>
                     {item.status}
                   </div>
                   <span>{item.species}</span>
