@@ -1,9 +1,11 @@
 import React from "react";
 import s from "./Header.module.css";
 import logo from "../../assets/rickAndMortyLogo.png";
+import { useNavigate } from "react-router-dom";
 import * as ROUTES from "../../constans/routePath";
 
 function Header() {
+  const navigate = useNavigate();
   const menuContent = [
     { name: "Dasboard", url: ROUTES.HOME },
     { name: "Locations", url: ROUTES.LOCATIONS },
@@ -19,11 +21,15 @@ function Header() {
         </div>
       </div>
       <div className={s.sideNav}>
-        <ul>
+        <ul className={s.menuBlock}>
           {menuContent.map((item, index) => {
             return (
-              <li key={index} className={s.menuItem}>
-                <a href={item.url}>{item.name}</a>
+              <li
+                onClick={() => navigate(item.url)}
+                key={index}
+                className={s.menuItem}
+              >
+                <p>{item.name}</p>
               </li>
             );
           })}

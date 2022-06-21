@@ -17,12 +17,10 @@ ul {
 }
 a {
   text-decoration: none;
-  color: #000000;
 }
-a:hover {
-  color: #696666;
+p {
+  margin: 0;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

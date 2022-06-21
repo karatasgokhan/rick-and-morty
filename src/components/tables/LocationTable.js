@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import * as ROUTES from "../../constans/routePath";
 import Pagination from "../Pagination";
 import s from "./LocationTable.module.css";
+import styled from "styled-components";
 
 export default function LocationTable() {
   const navigate = useNavigate();
@@ -16,10 +17,10 @@ export default function LocationTable() {
       name: "Name",
       cell: (row) => (
         <p className={s.locationName} onClick={() => onClick(row.id)}>
-          {" "}
           {row.name}
         </p>
       ),
+
       sortable: true,
     },
     { name: "Dimension", selector: (row) => row.dimension, sortable: true },

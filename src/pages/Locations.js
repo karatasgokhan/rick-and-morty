@@ -11,7 +11,7 @@ function Locations() {
           <Row>
             <Col sm={12}>
               <div className={s.locationsWrapper}>
-                <h1>Location Table</h1>
+                <h2>Location Table</h2>
               </div>
               <LocationTable />
             </Col>
