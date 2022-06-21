@@ -1,22 +1,18 @@
 import { React, useState } from "react";
 import DataTable from "react-data-table-component";
-import {
-  useGetRickAndMortyLocationsQuery,
-  useGetRickAndMortyLocationQuery,
-} from "../../store/apis/RickAndMortyApi";
+import { useGetRickAndMortyLocationsQuery } from "../../store/apis/RickAndMortyApi";
+import { useNavigate } from "react-router-dom";
 import * as ROUTES from "../../constans/routePath";
+import Pagination from "../Pagination";
 
 export default function LocationTable() {
-  const [locationId, setLocationId] = useState("");
-  const { data, isLoading, isSuccess } = useGetRickAndMortyLocationsQuery(2);
-  const {
-    data: locationData,
-    isLoading: locationLoading,
-    isSuccess: locationIsSuccess,
-  } = useGetRickAndMortyLocationQuery(locationId);
+  const [pageNumber, setPageNumber] = useState(1);
+  const navigate = useNavigate();
+  const { data, isLoading, isSuccess } =
+    useGetRickAndMortyLocationsQuery(pageNumber);
 
   const onClick = (id) => {
-    setLocationId(id);
+    navigate(`${ROUTES.RESIDENTS_WITHOUT_PARAM}/${id}`);
   };
 
   const columns = [
@@ -35,7 +31,16 @@ export default function LocationTable() {
   ];
   return (
     <>
-      <DataTable columns={columns} data={data.results} highlightOnHover />
+      <DataTable
+        columns={columns}
+        data={data ? data.results : []}
+        highlightOnHover
+      />
+      <Pagination
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+        totalPage={data ? data.info.pages : 1}
+      />
     </>
   );
 }

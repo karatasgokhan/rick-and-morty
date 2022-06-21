@@ -1,16 +1,14 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { Container, Row, Col } from "react-grid-system";
 import ReactPaginate from "react-paginate";
 
-function Pagination(data) {
-  const [pageNumber, setPageNumber] = useState(0);
-
-  const usersPerPage = 10;
-  const pagesVisited = pageNumber * usersPerPage;
-  const pageCount = Math.ceil(data.length / usersPerPage);
+function Pagination(props) {
+  // const usersPerPage = 10;
+  // const pagesVisited = pageNumber * usersPerPage;
+  // const pageCount = Math.ceil(data.length / usersPerPage);
 
   const changePage = ({ selected }) => {
-    setPageNumber(selected);
+    props.setPageNumber(selected + 1);
   };
 
   return (
@@ -21,7 +19,7 @@ function Pagination(data) {
             <ReactPaginate
               previousLabel={"Previous"}
               nextLabel={"Next"}
-              pageCount={pageCount}
+              pageCount={props.totalPage}
               onPageChange={changePage}
               containerClassName={"paginationBttns"}
               previousLinkClassName={"previousBttn"}

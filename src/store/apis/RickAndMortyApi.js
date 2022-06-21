@@ -8,6 +8,12 @@ export const rickAndMortyApi = createApi({
   reducerPath: "rickAndMortyApi",
   baseQuery: baseQuery,
   endpoints: (builder) => ({
+    getRickAndMortyLocations: builder.query({
+      query: (pageNumber) => ({
+        url: `location?page=${pageNumber}`,
+        method: "GET",
+      }),
+    }),
     getRickAndMortyLocation: builder.query({
       query: (locationId) => ({
         url: `location/${locationId}`,
@@ -20,18 +26,6 @@ export const rickAndMortyApi = createApi({
         method: "GET",
       }),
     }),
-    getRickAndMortyLocations: builder.query({
-      query: (pageNumber) => ({
-        url: `location?page=${pageNumber}`,
-        method: "GET",
-      }),
-    }),
-    getRickAndMortyLocationResidants: builder.query({
-      query: (number) => ({
-        url: `location/${number}`,
-        method: "GET",
-      }),
-    }),
   }),
 });
 
@@ -39,5 +33,4 @@ export const {
   useGetRickAndMortyCharacterQuery,
   useGetRickAndMortyLocationQuery,
   useGetRickAndMortyLocationsQuery,
-  useGetRickAndMortyLocationResidantsQuery,
 } = rickAndMortyApi;
