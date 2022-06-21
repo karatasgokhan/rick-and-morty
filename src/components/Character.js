@@ -5,7 +5,7 @@ import s from "./Character.module.css";
 function Character(props) {
   return (
     <>
-      <Col key={props.index} sm={4}>
+      <Col key={props.index} md={6} xxl={4}>
         <div className={s.residentCartBlock}>
           <div className={s.imgBlock}>
             <img
@@ -15,7 +15,7 @@ function Character(props) {
           </div>
           <div className={s.textBlock}>
             <div className={s.textItem}>
-              <h2>{props.item.name}</h2>
+              <p>{props.item.name}</p>
               <div className={s.statusItem}>
                 <span
                   className={`${s.circle} ${
