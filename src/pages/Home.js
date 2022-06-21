@@ -12,7 +12,7 @@ function Home() {
             <Col sm={12}>
               <div className={s.dashboardWrapper}>
                 <h1>Welcome to Rick And Morty App</h1>
-                <img src={HomeImage} alt="Rick And Morty page not found" />
+                <img src={HomeImage} alt="Rick And Morty home page" />
               </div>
             </Col>
           </Row>
