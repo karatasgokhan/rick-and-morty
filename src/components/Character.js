@@ -15,7 +15,7 @@ function Character(props) {
           </div>
           <div className={s.textBlock}>
             <div className={s.textItem}>
-              <p>{props.item.name}</p>
+              <p className={s.locationName}>{props.item.name}</p>
               <div className={s.statusItem}>
                 <span
                   className={`${s.circle} ${
