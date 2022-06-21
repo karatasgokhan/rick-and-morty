@@ -11,21 +11,17 @@ import s from "./Residents.module.css";
 function Residents() {
   const params = useParams();
   const navigate = useNavigate();
-  const {
-    data: residentData,
-    isLoading: residentLoading,
-    isSuccess: residentIsSuccess,
-  } = useGetRickAndMortyLocationQuery(params.locationId);
+
+  const { data: residentData } = useGetRickAndMortyLocationQuery(
+    params.locationId
+  );
   const residentsIds =
     residentData?.residents &&
     residentData.residents.map(
       (x) => x.split("https://rickandmortyapi.com/api/character/")[1]
     );
-  const {
-    data: characterData,
-    isLoading: characterIsLoading,
-    isSuccess: characterIsSuccess,
-  } = useGetRickAndMortyCharacterQuery(residentsIds);
+  const { data: characterData } =
+    useGetRickAndMortyCharacterQuery(residentsIds);
 
   return (
     <>
@@ -39,10 +35,11 @@ function Residents() {
             </Col>
           </Row>
         </Container>
-
         <Container>
           <Row>
-            {<Character characterData={characterData ? characterData : []} />}
+            {characterData?.map((item, index) => {
+              return <Character item={item} index={index} />;
+            })}
           </Row>
         </Container>
       </div>
