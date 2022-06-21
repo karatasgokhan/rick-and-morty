@@ -5,7 +5,7 @@ import s from "./Character.module.css";
 function Character(props) {
   return (
     <>
-      {props.characterData.map((item, index) => {
+      {props.characterData?.map((item, index) => {
         return (
           <Col key={index} sm={4}>
             <div className={s.residentCartBlock}>

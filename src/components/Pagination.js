@@ -3,10 +3,6 @@ import { Container, Row, Col } from "react-grid-system";
 import ReactPaginate from "react-paginate";
 
 function Pagination(props) {
-  // const usersPerPage = 10;
-  // const pagesVisited = pageNumber * usersPerPage;
-  // const pageCount = Math.ceil(data.length / usersPerPage);
-
   const changePage = ({ selected }) => {
     props.setPageNumber(selected + 1);
   };
@@ -21,11 +17,17 @@ function Pagination(props) {
               nextLabel={"Next"}
               pageCount={props.totalPage}
               onPageChange={changePage}
-              containerClassName={"paginationBttns"}
-              previousLinkClassName={"previousBttn"}
-              nextLinkClassName={"nextBttn"}
-              disabledClassName={"paginationDisabled"}
-              activeClassName={"paginationActive"}
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-item"
+              previousLinkClassName="page-link"
+              nextClassName="page-item"
+              nextLinkClassName="page-link"
+              breakLabel="..."
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              containerClassName="pagination"
+              activeClassName="active"
             />
           </Col>
         </Row>

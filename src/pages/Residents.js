@@ -1,14 +1,16 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-grid-system";
 import Character from "../components/Character";
 import {
   useGetRickAndMortyCharacterQuery,
   useGetRickAndMortyLocationQuery,
 } from "../store/apis/RickAndMortyApi";
+import s from "./Residents.module.css";
 
 function Residents() {
   const params = useParams();
+  const navigate = useNavigate();
   const {
     data: residentData,
     isLoading: residentLoading,
@@ -28,6 +30,16 @@ function Residents() {
   return (
     <>
       <div className="mainContent">
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <button className={s.backButton} onClick={() => navigate(-1)}>
+                Back
+              </button>
+            </Col>
+          </Row>
+        </Container>
+
         <Container>
           <Row>
             {<Character characterData={characterData ? characterData : []} />}
