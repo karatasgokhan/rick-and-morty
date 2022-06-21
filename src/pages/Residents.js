@@ -6,6 +6,8 @@ import {
   useGetRickAndMortyCharacterQuery,
   useGetRickAndMortyLocationQuery,
 } from "../store/apis/RickAndMortyApi";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import s from "./Residents.module.css";
 
 function Residents() {
@@ -29,9 +31,12 @@ function Residents() {
         <Container>
           <Row>
             <Col sm={12}>
-              <button className={s.backButton} onClick={() => navigate(-1)}>
-                Back
-              </button>
+              <div>
+                <div onClick={() => navigate(-1)} className={s.ıconItem}>
+                  <FontAwesomeIcon icon={faArrowLeft} />
+                </div>
+                <h2>Residents</h2>
+              </div>
             </Col>
           </Row>
         </Container>

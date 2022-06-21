@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import * as ROUTES from "../../constans/routePath";
 import Pagination from "../Pagination";
 import s from "./LocationTable.module.css";
-import styled from "styled-components";
 
 export default function LocationTable() {
   const navigate = useNavigate();

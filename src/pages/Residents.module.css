@@ -3,3 +3,11 @@
   border-radius: 8px;
   padding: 8px 24px 8px 8px;
 }
+
+.ıconItem {
+  margin: 0 0 1rem 0;
+  cursor: pointer;
+}
+.ıconItem svg {
+  font-size: 2rem;
+}
