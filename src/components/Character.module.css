@@ -40,13 +40,24 @@
   margin: 0 8px 0 0;
 }
 .unknown {
-  background-color: yellow;
+  background-color: #ffee58;
 }
 
 .alive {
-  background-color: green;
+  background-color: #1abd00;
 }
 
 .dead {
-  background-color: red;
+  background-color: #da0404;
+}
+.unknownText {
+  color: #f9a825;
+}
+
+.aliveText {
+  color: #00631e;
+}
+
+.deadText {
+  color: #8f0000;
 }

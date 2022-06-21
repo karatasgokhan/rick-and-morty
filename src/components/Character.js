@@ -26,7 +26,17 @@ function Character(props) {
                       : s.unknown
                   }`}
                 ></span>
-                {props.item.status}
+                <span
+                  className={`${
+                    props.item.status === "Dead"
+                      ? s.deadText
+                      : props.item.status === "Alive"
+                      ? s.aliveText
+                      : s.unknownText
+                  }`}
+                >
+                  {props.item.status}
+                </span>
               </div>
               <span>{props.item.species}</span>
               <span>{props.item.type}</span>
