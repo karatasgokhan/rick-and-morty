@@ -30,7 +30,7 @@ function Residents() {
       <div className="mainContent">
         <Container>
           <Row>
-            {<Character characterData={[characterData ? characterData : []]} />}
+            {<Character characterData={characterData ? characterData : []} />}
           </Row>
         </Container>
       </div>
