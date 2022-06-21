@@ -38,10 +38,10 @@ function Character(props) {
                   {props.item.status}
                 </span>
               </div>
-              <span>{props.item.species}</span>
-              <span>{props.item.type}</span>
-              <span>{props.item.genter}</span>
-              <span>{props.item.origin.name}</span>
+              <p>{props.item.species}</p>
+              <p>{props.item.type}</p>
+              <p>{props.item.genter}</p>
+              <p>{props.item.origin.name}</p>
             </div>
           </div>
         </div>

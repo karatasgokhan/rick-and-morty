@@ -32,7 +32,7 @@ function Residents() {
           <Row>
             <Col sm={12}>
               <div>
-                <div onClick={() => navigate(-1)} className={s.ıconItem}>
+                <div onClick={() => navigate(-1)} className={s.IconItem}>
                   <FontAwesomeIcon icon={faArrowLeft} />
                 </div>
                 <h2>Residents</h2>
