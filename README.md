@@ -7,7 +7,7 @@ An application was developed using **https://rickandmortyapi.com/** to list Rick
 Locations, dimension, type and resident count information are listed on the locations page by requesting the **https://rickandmortyapi.com/api/location?page=${page Number}** api.
 
 When you click on a location in the table, the id's of the clicked location are retrieved and a request is sent to the
-**https://rickandmortyapi.com/api/location/${locationId}** API. From the returned response, the identities of the residents are taken and by sending a request to the \*\* **https://rickandmortyapi.com/api/character/${characterId}** API, their names, properties, status, types and lineage name information are obtained and list.
+**https://rickandmortyapi.com/api/location/${locationId}** API. From the returned response, the identities of the residents are taken and by sending a request to the **https://rickandmortyapi.com/api/character/${characterId}** API, their names, properties, status, types and lineage name information are obtained and list.
 
 ## Available Scripts
 
