@@ -12,18 +12,25 @@ import PageNotFound from "../pageNotFound/PageNotFound";
 function Residents() {
   const params = useParams();
 
-  const { data: residentData, isError } = useGetRickAndMortyLocationQuery(
-    params.locationId
-  );
+  const {
+    data: residentData,
+    isError,
+    isSuccess: residentSuccess,
+  } = useGetRickAndMortyLocationQuery(params.locationId, {
+    skip: !params.locationId,
+  });
 
   const residentsIds =
+    residentSuccess &&
     residentData?.residents &&
     residentData.residents.map(
       (x) => x.split("https://rickandmortyapi.com/api/character/")[1]
     );
 
-  const { data: characterData } =
-    useGetRickAndMortyCharacterQuery(residentsIds);
+  const { data: characterData } = useGetRickAndMortyCharacterQuery(
+    residentsIds,
+    { skip: !residentsIds }
+  );
 
   return (
     <>
