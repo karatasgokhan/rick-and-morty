@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../src/pages/Home";
-import Locations from "../src/pages/Locations";
-import PageNotFound from "../src/pages/PageNotFound";
+import Home from "./pages/home/Home";
+import Locations from "./pages/location/Locations";
+import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import Header from "../src/components/header/Header";
-import Residents from "./pages/Residents";
+import Residents from "./pages/resident/Residents";
 import * as ROUTES from "../src/constans/routePath";
 
 import "./App.css";

@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-grid-system";
-import NotFound from "../assets/rickAndMorty.png";
-import * as ROUTES from "../constans/routePath";
+import NotFound from "../../assets/rickAndMorty.png";
+import * as ROUTES from "../../constans/routePath";
 import s from "./PageNotFound.module.css";
 
 function PageNotFound() {

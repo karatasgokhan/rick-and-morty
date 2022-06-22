@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-grid-system";
-import LocationTable from "../components/tables/LocationTable";
+import LocationTable from "../../components/tables/LocationTable";
 
 function Locations() {
   return (

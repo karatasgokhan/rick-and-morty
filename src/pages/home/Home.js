@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-grid-system";
-import HomeImage from "../assets/rickAndMorty.png";
+import HomeImage from "../../assets/rickAndMorty.png";
 import s from "./Home.module.css";
 
 function Home() {
