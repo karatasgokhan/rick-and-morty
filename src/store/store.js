@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import contentExperimentationReducer from "./features/contentExperimentationSlice";
+import counterReducer from "./features/counter/counterSlice";
 import { rickAndMortyApi } from "./apis/RickAndMortyApi";
 
 export const store = configureStore({
   reducer: {
     [rickAndMortyApi.reducerPath]: rickAndMortyApi.reducer,
-    contentExperimentationSlice: contentExperimentationReducer,
+    counterSlice: counterReducer,
   },
 
   middleware: (getDefaultMiddleware) =>
