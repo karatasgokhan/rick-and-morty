@@ -16,7 +16,7 @@ function App() {
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.LOCATIONS} element={<Locations />} />
         <Route path={ROUTES.RESIDENTS} element={<Residents />} />
-        <Route path={ROUTES.PAGENOTFOUND} element={<PageNotFound />}></Route>
+        <Route path={ROUTES.PAGENOTFOUND} element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );

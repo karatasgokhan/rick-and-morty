@@ -1,15 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import logo from "../../assets/rickAndMortyLogo.png";
-import { useNavigate } from "react-router-dom";
 import * as ROUTES from "../../constans/routePath";
 
 function Header() {
-  const navigate = useNavigate();
   const menuContent = [
     { name: "Dasboard", url: ROUTES.HOME },
     { name: "Locations", url: ROUTES.LOCATIONS },
   ];
+
   return (
     <>
       <div className={s.headerWrapper}>
@@ -21,19 +21,19 @@ function Header() {
         </div>
       </div>
       <div className={s.sideNav}>
-        <ul className={s.menuBlock}>
-          {menuContent.map((item, index) => {
-            return (
-              <li
-                onClick={() => navigate(item.url)}
-                key={index}
-                className={s.menuItem}
-              >
-                <p>{item.name}</p>
-              </li>
-            );
-          })}
-        </ul>
+        {menuContent.map((item, index) => {
+          return (
+            <NavLink
+              key={index}
+              to={item.url}
+              className={({ isActive }) =>
+                `nav-link ${s.menuItem} ${isActive ? s.active : ""}`
+              }
+            >
+              {item.name}
+            </NavLink>
+          );
+        })}
       </div>
     </>
   );

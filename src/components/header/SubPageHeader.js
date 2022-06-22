@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import s from "./BackButton.module.css";
+import s from "./SubPageHeader.module.css";
 
 function Character(props) {
   const navigate = useNavigate();
@@ -10,9 +10,11 @@ function Character(props) {
   return (
     <>
       <div>
-        <div onClick={() => navigate(-1)} className={s.IconItem}>
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </div>
+        {props.back && (
+          <div onClick={() => navigate(-1)} className={s.IconItem}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </div>
+        )}
         <h2>{props.title}</h2>
       </div>
     </>

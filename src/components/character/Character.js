@@ -1,11 +1,12 @@
 import React from "react";
 import { Col } from "react-grid-system";
 import s from "./Character.module.css";
+import { checkStatus, checkStatusText } from "../../helper/index";
 
 function Character(props) {
   return (
     <>
-      <Col key={props.index} md={6} xxl={4}>
+      <Col md={6} xxl={4}>
         <div className={s.residentCartBlock}>
           <div className={s.imgBlock}>
             <img
@@ -18,23 +19,9 @@ function Character(props) {
               <p className={s.locationName}>{props.item.name}</p>
               <div className={s.statusItem}>
                 <span
-                  className={`${s.circle} ${
-                    props.item.status === "Dead"
-                      ? s.dead
-                      : props.item.status === "Alive"
-                      ? s.alive
-                      : s.unknown
-                  }`}
+                  className={`${s.circle} ${checkStatus(props.item.status, s)}`}
                 ></span>
-                <span
-                  className={`${
-                    props.item.status === "Dead"
-                      ? s.deadText
-                      : props.item.status === "Alive"
-                      ? s.aliveText
-                      : s.unknownText
-                  }`}
-                >
+                <span className={`${checkStatusText(props.item.status, s)}`}>
                   {props.item.status}
                 </span>
               </div>
