@@ -27,7 +27,7 @@ function Character(props) {
               </div>
               <p>{props.item.species}</p>
               <p>{props.item.type}</p>
-              <p>{props.item.genter}</p>
+              <p>{props.item.gender}</p>
               <p>{props.item.origin.name}</p>
             </div>
           </div>
